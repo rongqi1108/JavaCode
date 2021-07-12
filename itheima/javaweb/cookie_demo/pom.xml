@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rong</groupId>
-    <artifactId>studentManager</artifactId>
+    <artifactId>cookie_demo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>studentManager</name>
+    <name>cookie_demo</name>
     <packaging>war</packaging>
 
     <properties>
@@ -23,6 +23,7 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
