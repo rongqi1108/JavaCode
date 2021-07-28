@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis的DTD约束-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rong.mapper.StudentMapper">
+    <select id="selectAll" resultType="student" >
+        select * from mybatis_demo.student;
+    </select>
+    <insert id="insertStudent" parameterType="student">
+        insert into student value(#{sid},#{name},#{age},#{birthday});
+    </insert>
+    <delete id="deleteStudent" parameterType="int">
+        delete from student where sid=#{sid};
+    </delete>
+    <update id="updateStudent" parameterType="student">
+        update student set name=#{name},age=#{age},birthday=#{birthday} where sid=#{sid};
+    </update>
+
+    <select id="getOne" resultType="student">
+        select * from student where sid=#{id} and name=#{na};
+    </select>
+    <select id="getOne2" parameterType="map" resultType="student">
+        select * from student where sid=#{id} and name=#{na};
+    </select>
+</mapper>

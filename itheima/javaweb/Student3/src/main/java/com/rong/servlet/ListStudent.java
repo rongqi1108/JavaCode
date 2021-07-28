@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ListStudent extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BufferedReader br = new BufferedReader(new FileReader("stuInfo.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/rong/IdeaProjects/itheima/javaweb/Student3/src/main/webapp/stuInfo.txt"));
         ArrayList<Student> students = new ArrayList<>();
         String line;
         while ((line = br.readLine()) != null){

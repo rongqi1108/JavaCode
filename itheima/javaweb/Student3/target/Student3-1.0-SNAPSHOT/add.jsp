@@ -11,7 +11,7 @@
     <title>添加学生</title>
 </head>
 <body>
-    <form action="/stu/addStudent" method="post" autocomplete="off">
+    <form action="${pageContext.request.contextPath}/addStudent" method="post" autocomplete="off">
         学生姓名：<input type="text" name="name" autocomplete="off"><br>
         学生年龄：<input type="number" name="age" autocomplete="off"><br>
         学生成绩：<input type="number" name="score" autocomplete="off"><br>

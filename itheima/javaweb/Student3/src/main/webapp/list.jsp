@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.rong.bean.Student" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
@@ -18,6 +19,7 @@
         <th>学生年龄</th>
         <th>学生成绩</th>
     </tr>
+    <%--
     <% ArrayList<Student> students = (ArrayList<Student>) session.getAttribute("students");
         for(Student stu : students) {
     %>
@@ -27,6 +29,14 @@
         <td><%=stu.getScore()%></td>
     </tr>
     <%}%>
+    --%>
+    <c:forEach items="${sessionScope.students}" var="s">
+        <tr align="center">
+            <td>${s.name}</td>
+            <td>${s.age}</td>
+            <td>${s.score}</td>
+        </tr>
+    </c:forEach>
 </table>
 
 </body>
