@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的绑定和解绑</title>
+</head>
+<body>
+<input type="button" id="bt1" value="点我呀"><br><br>
+<input type="button" id="bt2" value="使上面按钮失效">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    $("#bt1").on("click",function () {
+        alert("有事吗？没事别瞎点！");
+    });
+    $("#bt2").on("click",function () {
+        $("#bt1").off("click");
+    });
+</script>
+</html>

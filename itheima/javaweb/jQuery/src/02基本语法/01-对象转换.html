@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象转换</title>
+</head>
+<body>
+    <div id="div">我是div</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    //js方式，通过id获取div元素
+    let jsDiv = document.getElementById("div");
+    alert(jsDiv.innerHTML);
+
+    //将js转换成jq对象
+    let jq = $(jsDiv);
+    alert(jq.html());
+
+    //jq方式，通过id获取div元素
+    let jqDiv = $("#div");
+    alert(jqDiv.html());
+
+    //将jQuery转换js
+    let js = jqDiv[0];
+    alert(js.innerHTML);
+</script>
+</html>

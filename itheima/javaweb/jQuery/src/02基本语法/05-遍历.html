@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历</title>
+</head>
+<body>
+    <input type="button" id="btn" value="遍历列表项">
+    <ul>
+        <li>安徽省</li>
+        <li>蚌埠市</li>
+        <li>安徽财经大学</li>
+    </ul>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    //1.传统方式
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     for (let i = 0; i < lis.length; i++) {
+    //         alert(i+":"+lis[i].innerHTML);
+    //     }
+    // });
+
+    //2.对象.each()方式
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     lis.each(function (index, ele) {
+    //         alert(index + ":" + ele.innerHTML);
+    //     });
+    // });
+
+    //3.$.each()方法
+    // $("#btn").click(function () {
+    //     let lis = $("li");
+    //     $.each(lis,function (index,ele) {
+    //         alert(index + ":" + ele.innerHTML);
+    //     });
+    // });
+
+    //4.for of 语句遍历
+    $("#btn").click(function () {
+        let lis = $("li");
+        for(ele of lis){
+            alert(ele.innerHTML);
+        }
+    });
+</script>
+</html>
