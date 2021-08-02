@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+    <div id="div">
+        <div>{{name}}</div>
+        <button v-on:click="change()">改变div的内容</button>
+        <button v-on:dblclick="change1()">改回div的内容</button>
+        <button @click="change()">改变div的内容</button>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#div",
+        data:{
+            name:"张三"
+        },
+        methods:{
+            change(){
+                this.name = "李四"
+            },
+            change1(){
+                this.name = "张三"
+            }
+        }
+    });
+</script>
+</html>
