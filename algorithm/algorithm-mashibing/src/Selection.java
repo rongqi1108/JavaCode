@@ -14,11 +14,11 @@ public class Selection {
         selection2(arr);
 //        selection3(arr);
 
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
+        traverse(arr);
+
     }
+
+
 
 
     public static void selection1(int[] arr) {
@@ -28,16 +28,14 @@ public class Selection {
             for (int j = i + 1; j < arr.length; j++) {
                 min = arr[j] < arr[min] ? j : min;
             }
-            int temp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = temp;
+           swap(arr, i, min);
         }
 
     }
 
     public static void selection2(int[] arr) {
         //优化 同时找到最小最大，放到前面后面
-        //难点 在中间的时候，会出现
+        //难点 在中间的时候，会出现交叉情况
         for (int i = 0; i < arr.length - i; i++) {
             int min = i;
             int max = i;
@@ -81,16 +79,21 @@ public class Selection {
                     }
                     min = arr[min2] < arr[min] ? min2 : min;
                 }
-                int temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp;
+                swap(arr, i, min);
             }
         }
 
-        public static void swap ( int[] arr, int pos1, int pos2){
-            int t;
-            t = arr[pos1];
-            arr[pos1] = arr[pos2];
-            arr[pos2] = t;
-        }
+    public static void swap ( int[] arr, int pos1, int pos2){
+        int t;
+        t = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = t;
     }
+
+    private static void traverse(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
