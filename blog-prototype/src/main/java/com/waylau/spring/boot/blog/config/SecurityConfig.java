@@ -25,24 +25,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private static final String KEY = "www.rongstudy.space";
 	
-//	@Autowired
-//	private UserDetailsService userDetailsService;
-//
-//	@Autowired
-//    private PasswordEncoder passwordEncoder;
-//
-//	@Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();   // 使用 BCrypt 加密
-//    }
-//
-//	@Bean
-//    public AuthenticationProvider authenticationProvider() {
-//		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-//		authenticationProvider.setUserDetailsService(userDetailsService);
-//		authenticationProvider.setPasswordEncoder(passwordEncoder); // 设置密码加密方式
-//        return authenticationProvider;
-//    }
+	@Autowired
+	private UserDetailsService userDetailsService;
+
+	@Autowired
+    private PasswordEncoder passwordEncoder;
+
+	@Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();   // 使用 BCrypt 加密
+    }
+
+	@Bean
+    public AuthenticationProvider authenticationProvider() {
+		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+		authenticationProvider.setUserDetailsService(userDetailsService);
+		authenticationProvider.setPasswordEncoder(passwordEncoder); // 设置密码加密方式
+        return authenticationProvider;
+    }
  
 	/**
 	 * 自定义配置
@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/css/**", "/js/**", "/fonts/**", "/index").permitAll() // 都可以访问
 				.antMatchers("/h2-console/**").permitAll() // 都可以访问
-//				.antMatchers("/admins/**").hasRole("ADMIN") // 需要相应的角色才能访问
+				.antMatchers("/admins/**").hasRole("ADMIN") // 需要相应的角色才能访问
 				.and()
 				.formLogin()   //基于 Form 表单登录验证
 				.loginPage("/login").failureUrl("/login-error") // 自定义登录界面
@@ -66,9 +66,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 * @param auth
 	 * @throws Exception
 	 */
-//	@Autowired
-//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.userDetailsService(userDetailsService);
-//		auth.authenticationProvider(authenticationProvider());
-//	}
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsService);
+		auth.authenticationProvider(authenticationProvider());
+	}
 }
