@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @MapperScan("com.rong.mapper")
 @SpringBootApplication
-public class SpringBoot2023Application {
+public class BootApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBoot2023Application.class);
+        SpringApplication.run(BootApplication.class);
     }
 }

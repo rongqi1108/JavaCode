@@ -20,8 +20,11 @@
             <artifactId>00-spring-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>com.rong</groupId>
+            <artifactId>00-mysql-connect-boot</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

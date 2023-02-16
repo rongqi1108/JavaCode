@@ -16,8 +16,8 @@ import java.util.List;
  * @time 2023/2/14 10:38 下午
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SpringBoot2023Application.class)
-public class SpringBoot2023Test {
+@SpringBootTest(classes = BootApplication.class)
+public class BootTest {
     @Resource
     PersonMapper personMapper;
     @Test
