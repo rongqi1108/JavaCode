@@ -1,0 +1,17 @@
+<configuration>
+    <property name="console.pattern" value="%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) %blue([%thread]) %magenta(%-5level) %green(%logger{50}) %red([%line]) - %green(%msg) %n"/> <!-- 控制台输出日志 -->
+
+    <!--输出到控制台 -->
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${console.pattern}</Pattern>
+            <!-- 设置字符集 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

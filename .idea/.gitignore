@@ -6,3 +6,16 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# idea-like project files
+*.iml
+/.idea
+/*/.idea
+/*/target
+/*/*.iml
+
+# logs
+/logs
+/*/logs

@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/00-mysql-connect-boot/00-mysql-connect-boot.iml" filepath="$PROJECT_DIR$/00-mysql-connect-boot/00-mysql-connect-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-common/00-spring-common.iml" filepath="$PROJECT_DIR$/spring-common/00-spring-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-study-simple-maven/01-study-simple-maven.iml" filepath="$PROJECT_DIR$/01-study-simple-maven/01-study-simple-maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-study-boot/02-study-boot.iml" filepath="$PROJECT_DIR$/02-study-boot/02-study-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaCode.iml" filepath="$PROJECT_DIR$/.idea/JavaCode.iml" />
     </modules>
   </component>
