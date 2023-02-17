@@ -26,6 +26,10 @@ public class CommonResult<T> implements Serializable {
         return new CommonResult<>(StatusCodeEnum.SUCCESS, data);
     }
 
+    public static <T> CommonResult<T> fail(T data){
+        return new CommonResult<>(StatusCodeEnum.FAIL, data);
+    }
+
     public String getStatus() {
         return status;
     }
