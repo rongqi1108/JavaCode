@@ -1,15 +1,17 @@
 package com.rong;
 
-import com.rong.mapper.PersonMapper;
-import com.rong.pojo.po.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
-
-
-import javax.annotation.Resource;
-import java.util.List;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 /**
  * @author Ryan
@@ -17,12 +19,24 @@ import java.util.List;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BootApplication.class)
+@AutoConfigureMockMvc
 public class BootTest {
-    @Resource
-    PersonMapper personMapper;
+
+    @Autowired
+    MockMvc mvc;
+
     @Test
-    public void test1(){
-        List<Person> all = personMapper.getAll();
-        System.out.println(all);
+    public void getPerson1() throws Exception{
+        ResultActions resultActions = mvc.perform(MockMvcRequestBuilders.get("/get/person/1"));
+        resultActions.andExpect(MockMvcResultMatchers.status().isOk()); // 响应状态码 200
+        resultActions.andDo(MockMvcResultHandlers.print());// 打印结果
+    }
+
+    @Test
+    public void getPerson2() throws Exception{
+        ResultActions resultActions = mvc.perform(MockMvcRequestBuilders.get("/get/person/2")
+                .accept(MediaType.APPLICATION_JSON_UTF8_VALUE));
+        resultActions.andExpect(MockMvcResultMatchers.status().isOk()); // 响应状态码 200
+        resultActions.andDo(MockMvcResultHandlers.print());// 打印结果
     }
 }
