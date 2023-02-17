@@ -10,11 +10,14 @@ import com.rong.pojo.vo.PageInfo;
 import com.rong.pojo.vo.Void;
 import com.rong.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**
@@ -22,6 +25,7 @@ import java.util.List;
  * @Date: 2023-02-17 09:20:53
  */
 @RestController
+@Validated
 public class PersonController {
     @Autowired
     private PersonService personService;
@@ -79,6 +83,11 @@ public class PersonController {
         Person person = new Person();
         person.setName(personAddDTO.getName());
         personService.save(person);
+        return CommonResult.success();
+    }
+
+    @GetMapping("phone")
+    public CommonResult<Void> phone(@NotBlank(message = "手机号不能为空") @Pattern(regexp = "^(0|86|17951)?1[0-9]{10}", message = "手机号格式错误！") String phone){
         return CommonResult.success();
     }
 
