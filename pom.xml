@@ -11,10 +11,11 @@
     <description>父工程 依赖管理</description>
 
     <modules>
+        <module>00-common-tools</module>
         <module>00-spring-common</module>
+        <module>00-mysql-connect-boot</module>
         <module>01-study-simple-maven</module>
         <module>02-study-boot</module>
-        <module>00-mysql-connect-boot</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -26,6 +27,7 @@
         <mysql-connect.version>8.0.23</mysql-connect.version>
         <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
         <mybatis.version>2.1.1</mybatis.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -55,7 +57,29 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.1.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
