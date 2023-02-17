@@ -12,4 +12,6 @@ public interface PersonMapper {
 
     List<Person> getAll();
 
+    int insert(Person person);
+
 }

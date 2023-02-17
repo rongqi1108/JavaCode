@@ -3,6 +3,7 @@ package com.rong.controller;
 import com.rong.constants.StatusCodeEnum;
 import com.rong.exception.ServiceException;
 import com.rong.interceptor.AccessFrequencyLimit;
+import com.rong.pojo.dto.PersonAddDTO;
 import com.rong.pojo.po.Person;
 import com.rong.pojo.vo.CommonResult;
 import com.rong.pojo.vo.PageInfo;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -72,5 +74,12 @@ public class PersonController {
         return CommonResult.success();
     }
 
+    @PostMapping("add")
+    public CommonResult<Void> add(@Valid PersonAddDTO personAddDTO){
+        Person person = new Person();
+        person.setName(personAddDTO.getName());
+        personService.save(person);
+        return CommonResult.success();
+    }
 
 }

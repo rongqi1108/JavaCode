@@ -18,4 +18,6 @@ public interface PersonService {
     void findB();
 
     void findC();
+
+    int save(Person person);
 }

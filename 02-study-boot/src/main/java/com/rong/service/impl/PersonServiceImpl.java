@@ -59,4 +59,9 @@ public class PersonServiceImpl implements PersonService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public int save(Person person) {
+        return personMapper.insert(person);
+    }
 }

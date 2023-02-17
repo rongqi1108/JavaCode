@@ -22,6 +22,11 @@ public class CommonResult<T> implements Serializable {
         this.remark = statusCodeEnum.getRemark();
     }
 
+    public CommonResult(StatusCodeEnum statusCodeEnum, String msg) {
+        this.status = statusCodeEnum.getStatusCode();
+        this.remark = statusCodeEnum.getRemark()+": "+msg;
+    }
+
     public static CommonResult<Void> success(){
         return new CommonResult<>(StatusCodeEnum.SUCCESS, null);
     }
@@ -31,6 +36,10 @@ public class CommonResult<T> implements Serializable {
 
     public static <T> CommonResult<T> error(StatusCodeEnum statusCodeEnum, T data){
         return new CommonResult<>(statusCodeEnum, data);
+    }
+
+    public static <T> CommonResult<T> error(StatusCodeEnum statusCodeEnum, String appendMsg){
+        return new CommonResult<>(statusCodeEnum, appendMsg);
     }
 
     public static <T> CommonResult<T> fail(T data){
