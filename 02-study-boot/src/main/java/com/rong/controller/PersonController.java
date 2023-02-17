@@ -7,11 +7,11 @@ import com.rong.pojo.vo.CommonResult;
 import com.rong.pojo.vo.PageInfo;
 import com.rong.pojo.vo.Void;
 import com.rong.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,8 +20,10 @@ import java.util.List;
  */
 @RestController
 public class PersonController {
-    @Resource
+    @Autowired
     private PersonService personService;
+
+
 
     @GetMapping("/get/person/1")
     public List<Person> getAllPerson() {
@@ -55,5 +57,12 @@ public class PersonController {
         return CommonResult.success(msg);
     }
 
+    @GetMapping("aop/1")
+    public CommonResult<Void> aop(){
+        personService.findA();
+        personService.findB();
+        personService.findC();
+        return CommonResult.success();
+    }
 
 }

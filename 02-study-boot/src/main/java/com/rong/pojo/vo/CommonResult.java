@@ -22,6 +22,9 @@ public class CommonResult<T> implements Serializable {
         this.remark = statusCodeEnum.getRemark();
     }
 
+    public static CommonResult<Void> success(){
+        return new CommonResult<>(StatusCodeEnum.SUCCESS, null);
+    }
     public static <T> CommonResult<T> success(T data){
         return new CommonResult<>(StatusCodeEnum.SUCCESS, data);
     }

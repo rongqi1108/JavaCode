@@ -12,4 +12,10 @@ import java.util.List;
 public interface PersonService {
     List<Person> getAll();
     String get();
+
+    void findA();
+
+    void findB();
+
+    void findC();
 }
