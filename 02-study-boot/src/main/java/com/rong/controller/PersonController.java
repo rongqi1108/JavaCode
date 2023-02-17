@@ -2,6 +2,7 @@ package com.rong.controller;
 
 import com.rong.constants.StatusCodeEnum;
 import com.rong.exception.ServiceException;
+import com.rong.interceptor.AccessFrequencyLimit;
 import com.rong.pojo.po.Person;
 import com.rong.pojo.vo.CommonResult;
 import com.rong.pojo.vo.PageInfo;
@@ -22,7 +23,6 @@ import java.util.List;
 public class PersonController {
     @Autowired
     private PersonService personService;
-
 
 
     @GetMapping("/get/person/1")
@@ -58,11 +58,19 @@ public class PersonController {
     }
 
     @GetMapping("aop/1")
-    public CommonResult<Void> aop(){
+    public CommonResult<Void> aop() {
         personService.findA();
         personService.findB();
         personService.findC();
         return CommonResult.success();
     }
+
+
+    @GetMapping("interceptor")
+    @AccessFrequencyLimit(seconds = 5, maxCount = 10, needLogin = false)
+    public CommonResult<Void> interceptor() {
+        return CommonResult.success();
+    }
+
 
 }
