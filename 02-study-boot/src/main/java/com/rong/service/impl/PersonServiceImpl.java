@@ -1,5 +1,7 @@
 package com.rong.service.impl;
 
+import com.rong.constants.StatusCodeEnum;
+import com.rong.exception.ServiceException;
 import com.rong.mapper.PersonMapper;
 import com.rong.pojo.po.Person;
 import com.rong.service.PersonService;
@@ -21,5 +23,13 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Person> getAll() {
         return personMapper.getAll();
+    }
+
+    @Override
+    public String get() {
+        if (true) {
+            throw new ServiceException(StatusCodeEnum.MISSING_REQUEST_PARAM_ERROR);
+        }
+        return "helloWorld";
     }
 }

@@ -1,7 +1,6 @@
 package com.rong.service;
 
 import com.rong.pojo.po.Person;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,4 +11,5 @@ import java.util.List;
 
 public interface PersonService {
     List<Person> getAll();
+    String get();
 }

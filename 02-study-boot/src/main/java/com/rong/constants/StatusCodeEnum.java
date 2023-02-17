@@ -7,6 +7,8 @@ package com.rong.constants;
  */
 public enum StatusCodeEnum {
     SUCCESS("000000","通用成功"),
+    SYS_ERROR("010001", "服务端发生异常"),
+    MISSING_REQUEST_PARAM_ERROR("010101", "参数缺失"),
     FAIL("100000","通用失败");
     private String statusCode;
     private String remark;

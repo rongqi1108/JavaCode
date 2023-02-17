@@ -1,10 +1,14 @@
 package com.rong.controller;
 
+import com.rong.constants.StatusCodeEnum;
+import com.rong.exception.ServiceException;
 import com.rong.pojo.po.Person;
 import com.rong.pojo.vo.CommonResult;
 import com.rong.pojo.vo.PageInfo;
+import com.rong.pojo.vo.Void;
 import com.rong.service.PersonService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -29,4 +33,27 @@ public class PersonController {
         List<Person> all = personService.getAll();
         return CommonResult.success(PageInfo.onlyList(all));
     }
+
+    @GetMapping("exception/1")
+    public CommonResult<Void> testException() {
+        throw new ServiceException(null);
+    }
+
+    @PostMapping("exception/2")
+    public CommonResult<Void> testException2() {
+        throw new NullPointerException();
+    }
+
+    @PostMapping("exception/3")
+    public CommonResult<Void> testException3() {
+        throw new ServiceException(StatusCodeEnum.MISSING_REQUEST_PARAM_ERROR);
+    }
+
+    @PostMapping("exception/4")
+    public CommonResult<String> testException4() {
+        String msg = personService.get();
+        return CommonResult.success(msg);
+    }
+
+
 }
