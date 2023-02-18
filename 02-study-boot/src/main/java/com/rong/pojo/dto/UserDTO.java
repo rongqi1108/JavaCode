@@ -1,4 +1,4 @@
-package com.rong.pojo.po;
+package com.rong.pojo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Ryan
- * @time 2023/2/14 10:31 下午
+ * @time 2023/2/18 11:38 上午
  */
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+@Data
+public class UserDTO {
     private Long id;
     private String name;
+    private String pwd;
 }

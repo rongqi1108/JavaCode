@@ -6,12 +6,14 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author Ryan
- * @time 2023/2/14 10:31 下午
+ * @time 2023/2/18 11:38 上午
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person {
+public class User {
     private Long id;
     private String name;
+    private String password;
+    private String pictureUrls;
 }

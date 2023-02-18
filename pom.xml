@@ -23,11 +23,13 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <lombok.version>1.18.20</lombok.version>
+        <lombok.version>1.18.12</lombok.version>
         <mysql-connect.version>8.0.23</mysql-connect.version>
         <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
         <mybatis.version>2.1.1</mybatis.version>
         <fastjson.version>1.2.83</fastjson.version>
+        <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <hutool.version>5.8.11</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -69,17 +71,27 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.0.1.RELEASE</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+
             </plugin>
+
         </plugins>
     </build>
+
 </project>
