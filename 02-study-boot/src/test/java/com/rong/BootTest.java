@@ -61,5 +61,13 @@ public class BootTest {
         System.out.println(rq3);
         System.out.println(rq4);
         System.out.println(same);
+        /* 结果
+            成功运行……
+            UserDTO(id=1, name=rq, pwd=null)
+            UserDTO(id=1, name=rq, pwd=pwd)
+            UserDTO(id=1, name=戎旗, pwd=null)
+            UserListDTO(id=1, name=rq, password=pwd, pictureList=[/abc/d, /dgd/23])
+            UserDTOSame(id=1, name=rq, password=pwd)
+        */
     }
 }
