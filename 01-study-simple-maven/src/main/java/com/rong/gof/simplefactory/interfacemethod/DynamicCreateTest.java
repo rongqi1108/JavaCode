@@ -4,6 +4,11 @@ import com.rong.io.xml.DomReadXml;
 import com.rong.io.yml.YamlReader;
 
 /**
+ *   <dependency>
+ *      <groupId>org.yaml</groupId>
+ *      <artifactId>snakeyaml</artifactId>
+ *      <version>1.26</version>
+ *  </dependency>
  * @Author: RQ
  * @Date: 2023-02-08 11:03:50
  */
