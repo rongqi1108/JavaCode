@@ -1,4 +1,4 @@
-package com.rong.gof.simplefactory.interfacemethod;
+package com.rong.gof.a00simplefactory.interfacemethod;
 
 /**
  * @Author: RQ

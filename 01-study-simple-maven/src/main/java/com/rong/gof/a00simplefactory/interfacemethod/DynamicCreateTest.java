@@ -1,4 +1,4 @@
-package com.rong.gof.simplefactory.interfacemethod;
+package com.rong.gof.a00simplefactory.interfacemethod;
 
 import com.rong.io.xml.DomReadXml;
 import com.rong.io.yml.YamlReader;

@@ -1,4 +1,4 @@
-package com.rong.gof.simplefactory.abstractclass;
+package com.rong.gof.a00simplefactory.abstractclass;
 
 /**
  * @Author: RQ

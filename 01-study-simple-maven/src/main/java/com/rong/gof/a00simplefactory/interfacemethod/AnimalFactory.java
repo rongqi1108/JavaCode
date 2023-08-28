@@ -1,11 +1,11 @@
-package com.rong.gof.simplefactory.abstractclass;
+package com.rong.gof.a00simplefactory.interfacemethod;
 
 /**
  * @Author: RQ
- * @Date: 2023-02-08 10:31:58
+ * @Date: 2023-02-08 10:56:26
  */
 public class AnimalFactory {
-    public static Animal getAnimal(String animalName) {
+    public static Animal getAnimal(String animalName){
         if (animalName.equals("dog")) {
             return new Dog();
         }
