@@ -9,13 +9,13 @@ import java.io.File;
 public class FileNameEdit {
     public static void main(String[] args) {
         // 指定需要去除的文字
-        String removeWords = "【公众号：思雨考研】";
+        String removeWords = "【P1】";
         // 指定需要修改的文件所在的目录
-        String filePath = "C:\\Users\\admin\\Desktop\\00.课件";
-        //renameFileNameDelKeyWord(removeWords, filePath);//去除关键字
+        String filePath = "D:\\BaiduNetdiskDownload";
+        renameFileNameDelKeyWord(removeWords, filePath);//去除文件名所包含的关键字
         //renameFileNameDelKeyWord("xmindxmind", "xmind", filePath);
         //AllFileNameEditAndMove(removeWords, "", filePath);//批量修改该文件下及子目录下的所有符合的文件名称,并将这些文件全部移动到该目录下
-        AllFileNameEdit(removeWords, "", filePath);//批量修改该文件下及子目录下的所有符合的文件名称
+        //AllFileNameEdit(removeWords, "", filePath);//批量修改该文件下及子目录下的所有符合的文件名称
 
     }
 
